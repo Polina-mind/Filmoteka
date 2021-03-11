@@ -44,8 +44,8 @@ const lightBoxTeam = () => {
         window.removeEventListener('keydown', closeModalByEscape);
       }
     }
-    const closeRef = document.querySelector('.icon-close');
-    closeRef.addEventListener('click', btnClosedModal);
+    const crossRef = document.querySelector('.icon-cross');
+    crossRef.addEventListener('click', btnClosedModal);
     function btnClosedModal() {
       modalTeam.close();
       closeRef.removeEventListener('click', btnClosedModal);

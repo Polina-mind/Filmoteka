@@ -12,7 +12,7 @@ body.show-modal {
   display: block;
   //position: relative;
   width: 90vw;
-  height: 90vh;
+  //height: 90vh;
   margin-left: auto;
   margin-right: auto;
   padding: 48px 20px 41px;
@@ -20,7 +20,7 @@ body.show-modal {
 
   @media screen and (min-width: $tablet) {
     display: flex;
-    width: 90vw;
+    width: 70vw;
     height: 90vh;
     padding: 40px 28px;
   }
@@ -153,4 +153,12 @@ body.show-modal .modal-wrapper {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.basicLightbox--visible .basicLightbox__placeholder .modal__team {
+  @media screen and (max-width: 767px) {
+    transform: translate(0%, 15%);
+  }
+}
+.basicLightbox {
+  overflow: scroll;
 }
