@@ -118,6 +118,10 @@
     color: $color-black;
   }
 
+  &__rating-genre-value {
+    display: inline;
+  }
+
   &__rating-votes-avarage {
     padding: 1px 9px 1px 10px;
     background: $color-bcg-btn;
