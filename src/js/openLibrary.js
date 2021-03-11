@@ -98,7 +98,7 @@ refs.header.addEventListener('click', event => {
 
 
 function paginatingLib(containerToUse, SourceToUse, cardsPerPage){
-  
+  if(!SourceToUse) return;
   containerToUse.pagination({
     ...paginationParametersCommon,
     dataSource: SourceToUse,
