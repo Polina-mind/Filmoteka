@@ -2,20 +2,23 @@
   display: block;
   position: relative;
   width: 280px;
-  height: auto;
+  height: 95vh;
   margin-left: auto;
   margin-right: auto;
   padding: 48px 20px 41px;
   background-color: $color-white;
+  overflow-y: auto;
 
   @media screen and (min-width: $tablet) {
     display: flex;
+    height: auto;
     width: 618px;
     padding: 40px 28px;
+    overflow-y: none;
   }
 
   @media screen and (min-width: $desktop) {
-    width: 882px;
+    width: 804px;
     padding: 50px 30px 40px;
   }
 
@@ -38,7 +41,7 @@
     }
 
     @media screen and (min-width: $desktop) {
-      width: 396px;
+      width: 318px;
       height: 478px;
       object-fit: contain;
     }

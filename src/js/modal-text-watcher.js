@@ -1,8 +1,9 @@
+const bodyRef = document.querySelector('body');
+
 function modalWatcher() {
     const modalTextBoxRef = document.querySelector('.modal__text-about-box');
     const modalTextAboutRef = document.querySelector('.modal__text-about');
     const modalMoreRef = document.querySelector('.modal__more');
-    const bodyRef = document.querySelector('body');
 
     modalMoreRef.addEventListener('click', () => {
       if (modalTextBoxRef.dataset.size === 'min') {
@@ -16,16 +17,25 @@ function modalWatcher() {
       } else {
         modalTextAboutRef.style.height = '40px';
       }
+      
     })
   
     window.addEventListener('resize', () => {
       if ((bodyRef.clientWidth + 18) > 768) {
         modalTextAboutRef.style.height = 'auto';
-    } else {
+      } else {
         modalTextAboutRef.style.height = '40px';
         modalTextBoxRef.dataset.size = 'min';
       }
-  })
+    })
 }
 
-export { modalWatcher };
+function noScrollBody() {
+  bodyRef.style.overflow = 'hidden';
+}
+
+function scrollBody() {
+  bodyRef.style.overflow = 'visible';
+}
+
+export { modalWatcher, scrollBody, noScrollBody };
