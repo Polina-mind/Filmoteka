@@ -37,6 +37,15 @@ h3 {
   &__item {
     margin-bottom: 20px;
     width: 280px;
+    //modfified by Maryasov
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 3px 3px rgba(225, 225, 225, 10);
+    transition: $transition-common;
+    &:hover{
+      box-shadow: 0px 4px 4px rgba(200, 200, 200, 50);
+    }
+    //
     @media screen and (min-width: $tablet) {
       width: 293px;
       margin-right: 30px;
