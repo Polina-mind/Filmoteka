@@ -9,12 +9,13 @@ h3 {
 
 .movie-cards {
   display: block;
-  padding-top: 20px;
+  padding: 20px 0px 40px;
   &.is-hidden {
     display: none;
   }
   @media screen and (min-width: $tablet) {
     padding-top: 60px;
+    padding: 60px 0px 60px;
   }
 }
 
@@ -23,10 +24,13 @@ h3 {
   margin-left: auto;
   list-style: none;
   display: grid;
+  margin-bottom: 40px;
+  
   @media screen and (min-width: $tablet) {
     display: grid;
     width: 617px;
-    grid-template-columns: 323px 293px;
+    margin-bottom: 50px;
+    grid-template-columns: 323px 293px;    
   }
   @media screen and (min-width: $desktop) {
     display: grid;
