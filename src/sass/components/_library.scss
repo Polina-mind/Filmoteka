@@ -7,12 +7,12 @@
 // $width_mobile: 320px;
 
 /* myLibrary styles*/
-:root{
+:root {
   --currentWidthMode: 4;
-  @include for-size(tablet){
+  @include for-size(tablet) {
     --currentWidthMode: 8;
   }
-  @include for-size(desktop){
+  @include for-size(desktop) {
     --currentWidthMode: 9;
   }
 }
@@ -30,7 +30,7 @@
 
   &__list {
     // outline: 1px dashed greenyellow;
-    margin: 0px auto ;
+    margin: 0px auto;
     padding: 0px;
     list-style: none;
     @include CenteredFlex(flex, wrap);
@@ -38,6 +38,15 @@
   &__card-container {
     margin: 0px 0px 0px 0px;
     padding: 0px;
+    //modfified by Maryasov
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 3px 3px rgba(225, 225, 225, 10);
+    transition: $transition-common;
+    &:hover {
+      box-shadow: 0px 4px 4px rgba(200, 200, 200, 50);
+    }
+    //
     &:not(:last-child) {
       // outline: 2px solid green;
       margin-bottom: 20px;
@@ -75,7 +84,7 @@
     width: auto;
     height: auto;
   }
-  
+
   @include for-size(mobile) {
     &__container {
       // outline: 1px dashed red;
@@ -133,7 +142,7 @@
       margin: 0px auto;
       padding: 0px;
       list-style: none;
-      @include CenteredFlex(flex, wrap,$justify:left);
+      @include CenteredFlex(flex, wrap, $justify: left);
     }
     &__card-container {
       @include CenteredFlex(flex, wrap);
@@ -157,7 +166,7 @@
       margin: 0px;
       padding: 0px;
       width: 293px;
-      height: 440px;
+      height: 442px;
 
       // background-color: wheat;
       // outline: 1px solid yellow;
@@ -165,7 +174,7 @@
 
     &__page-selector {
       margin: 50px auto 0px;
-    }  
+    }
   }
   @include for-size(desktop) {
     &__container {
@@ -180,7 +189,7 @@
       margin: 0px;
       padding: 0px;
       list-style: none;
-      @include CenteredFlex(flex, wrap,$justify:left);
+      @include CenteredFlex(flex, wrap, $justify: left);
     }
     &__card-container {
       @include CenteredFlex(flex, wrap);
@@ -213,7 +222,7 @@
     }
     &__page-selector {
       margin: 50px auto 0px;
-    }    
+    }
   }
 }
-@import '../components/lib-card'
+@import '../components/lib-card';
