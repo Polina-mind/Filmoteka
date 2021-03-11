@@ -39,7 +39,9 @@
   font-size: 14px;
   line-height: 16px;
 }
-
+.route:hover {
+  color: $color-white;
+}
 .route {
   cursor: pointer;
   color: $color-white;
