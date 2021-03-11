@@ -20,7 +20,7 @@ refs.inputForm.addEventListener('submit', event => {
   apiService.query = form.elements.query.value;
   console.log(apiService.searchUrl);
   refs.movieGrid.innerHTML = '';
-  form.reset(); //чистим форму
+  //form.reset(); //чистим форму
 
   container.pagination({
     ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!

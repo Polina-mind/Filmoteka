@@ -22,11 +22,19 @@ function buttonWatchedActive() {
 
 // refs.navLibrary.addEventListener('click', openLibrary);
 function queuePaginate() {
-  paginatingLib(container, (JSON.parse(localStorage.getItem('filmsQueue'))), (cardsPerPage()));
+  paginatingLib(
+    container,
+    JSON.parse(localStorage.getItem('filmsQueue')),
+    cardsPerPage(),
+  );
 }
 
 function watchedPaginate() {
-  paginatingLib(container, (JSON.parse(localStorage.getItem('filmsWatched'))), (cardsPerPage()));
+  paginatingLib(
+    container,
+    JSON.parse(localStorage.getItem('filmsWatched')),
+    cardsPerPage(),
+  );
 }
 
 function openLibrary(event) {
@@ -52,8 +60,6 @@ function cardsPerPage() {
   return currentWidthMode;
 }
 
-
-
 // refs.navHome.addEventListener('click', openHome);
 function openHome(event) {
   event.preventDefault(event);
@@ -71,11 +77,12 @@ refs.header.addEventListener('click', event => {
   // Обработка на кнопки Library
   if (event.target.id === 'library') {
     openLibrary(event);
+    buttonWatchedActive();
     watchedPaginate();
     return;
   }
   //Обработка на кнопки Home
-  if (event.target.id === 'home') {
+  if (event.target.id === 'home' || event.target.id === 'filmoteka') {
     openHome(event);
     return;
   }
@@ -96,14 +103,13 @@ refs.header.addEventListener('click', event => {
   }
 });
 
-
-function paginatingLib(containerToUse, SourceToUse, cardsPerPage){
-  if(!SourceToUse) return;
+function paginatingLib(containerToUse, SourceToUse, cardsPerPage) {
+  if (!SourceToUse) return;
   containerToUse.pagination({
     ...paginationParametersCommon,
     dataSource: SourceToUse,
     pageSize: cardsPerPage,
-    showPrevious: ((SourceToUse.length/cardsPerPage)>2),
-    showNext: ((SourceToUse.length/cardsPerPage>2))
+    showPrevious: SourceToUse.length / cardsPerPage > 2,
+    showNext: SourceToUse.length / cardsPerPage > 2,
   });
 }
