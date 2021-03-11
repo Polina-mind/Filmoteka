@@ -3,6 +3,7 @@ import './js/openLibrary.js';
 import refs from './js/refs.js';
 import apiService from './js/apiSearchFetch.js';
 import lightbox from './js/modalFilmMarkup';
+import lightBoxTeam from './js/team-modal'
 import { processingSpinner, deleteSpinner } from './js/spinner-loader';
 import './js/pagination.min';
 import optionsPagination from './js/paginationOptions';
@@ -37,3 +38,4 @@ container.pagination({
 });
 // deleteSpinner();
 lightbox();
+lightBoxTeam()
