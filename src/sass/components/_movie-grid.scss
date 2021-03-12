@@ -14,7 +14,6 @@ h3 {
     display: none;
   }
   @media screen and (min-width: $tablet) {
-    padding-top: 60px;
     padding: 60px 0px 60px;
   }
 }
@@ -23,14 +22,13 @@ h3 {
   margin-right: auto;
   margin-left: auto;
   list-style: none;
-  display: grid;
   margin-bottom: 40px;
-  
+
   @media screen and (min-width: $tablet) {
     display: grid;
     width: 617px;
     margin-bottom: 50px;
-    grid-template-columns: 323px 293px;    
+    grid-template-columns: 323px 293px;
   }
   @media screen and (min-width: $desktop) {
     display: grid;
@@ -39,19 +37,22 @@ h3 {
   }
 
   &__item {
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 20px;
     width: 280px;
     //modfified by Maryasov
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0px 3px 3px rgba(225, 225, 225, 10);
-    transition: $transition-common;
-    &:hover{
-      box-shadow: 0px 4px 4px rgba(200, 200, 200, 50);
-    }
+    // border-radius: 5px;
+    // overflow: hidden;
+    // box-shadow: 0px 3px 3px rgba(225, 225, 225, 10);
+    // transition: $transition-common;
+    // &:hover {
+    //   box-shadow: 0px 4px 4px rgba(200, 200, 200, 50);
+    // }
     //
     @media screen and (min-width: $tablet) {
       width: 293px;
+      margin-left: 0;
       margin-right: 30px;
       margin-bottom: 30px;
     }
