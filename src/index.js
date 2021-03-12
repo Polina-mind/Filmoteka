@@ -9,6 +9,7 @@ import './js/pagination.min';
 import optionsPagination from './js/paginationOptions';
 import './js/team-modal';
 const container = $('#pagination-container');
+import './js/button-up.js';
 
 // processingSpinner();
 ///поиск по инпуту
