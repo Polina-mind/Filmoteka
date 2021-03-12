@@ -29,15 +29,15 @@ body.show-modal {
     // width: 90vw;
     padding: 50px 30px 40px;
   }
-
-  // &__close-btn {
-  //   position: absolute;
-  //   padding: 0;
-  //   top: 10px;
-  //   right: 10px;
-  //   cursor: pointer;
-  //   background-color: $color-white;
-  //   border: none;
+}
+.close-btn {
+  position: absolute;
+  padding: 0;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: $color-white;
+  border: none;
 }
 
 .modal-wrapper {
@@ -45,7 +45,7 @@ body.show-modal {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: $color-white;
+  background-color: grey;
   backdrop-filter: blur(20px);
 
   opacity: 0;
@@ -73,6 +73,8 @@ body.show-modal .modal-wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 70vw;
+  background: white;
 }
 
 .team-heading {
