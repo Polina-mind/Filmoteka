@@ -8,7 +8,7 @@ import refs from './refs.js';
 import onButtonRemoveFromWatched from './onButtonRemoveFromWatched';
 import checkButtonWatchedActive from './buttonWatchedCheckActive';
 import checkButtonQueueActive from './buttonQueueCheckActive';
-import { modalWatcher } from './modal-text-watcher';
+import { modalWatcher, scrollBody, noScrollBody } from './modal-text-watcher';
 import posterPlaceholder from '../img/image-placeholder-modal.jpg';
 
 function setPosterModal(data) {
@@ -19,7 +19,7 @@ function getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
     film.poster_path = setPosterModal(film.poster_path);
     const markupFilm = modalTpl(film);
-    const modal = basicLightbox.create(markupFilm);
+    const modal = basicLightbox.create(markupFilm, { onClose: () => scrollBody(), onShow: () => noScrollBody()});
     modal.show();
     // ===============================================
     // Проверка есть ли фильм в Watched
@@ -119,7 +119,7 @@ function getFilmInfo(movie_id) {
       );
     }
 
-    modalWatcher();
+    modalWatcher(); 
   });
 }
 
@@ -134,5 +134,7 @@ const lightBox = () => {
     getFilmInfo(event.target.dataset.id);
   }
 };
+
+
 
 export default lightBox;
