@@ -57,12 +57,13 @@ function getFilmInfo(movie_id) {
       'click',
       function () {
         checkButtonQueueActive(film);
-        queuePaginate();
+        if(refs.buttonQueue.classList.contains('library__button--active'))
+        {queuePaginate();}
       },
       false,
     );
 
-    // AddToWatched button
+    // AddToWatched button .library__button--active
 
     const buttonAddToWatchedRef = document.querySelector(
       '.modal__watched-button',
@@ -75,7 +76,8 @@ function getFilmInfo(movie_id) {
       'click',
       function () {
         checkButtonWatchedActive(film);
-        watchedPaginate();
+        if(refs.buttonWatched.classList.contains('library__button--active'))
+        {watchedPaginate();}
       },
       false,
     );
