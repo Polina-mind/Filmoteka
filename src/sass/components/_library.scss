@@ -38,13 +38,15 @@
   &__card-container {
     margin: 0px 0px 0px 0px;
     padding: 0px;
-    //modfified by Maryasov
-    border-radius: 5px;
+    //modfified by Maryasov - Sorry Nicolay, I'd chage it DawnrayVM.
     overflow: hidden;
-    box-shadow: 0px 3px 3px rgba(225, 225, 225, 10);
+    border: 1px solid rgba(225, 225, 225, 10);
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 0px rgba(225, 225, 225, 10);
     transition: $transition-common;
     &:hover {
-      box-shadow: 0px 4px 4px rgba(200, 200, 200, 50);
+      box-shadow: 5px 5px 10px 0px rgba(200, 200, 200, 50);
+      transform: scale(1.02);
     }
     //
     &:not(:last-child) {
