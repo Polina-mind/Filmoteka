@@ -10,7 +10,7 @@ body.show-modal {
 }
 .modal__team {
   display: block;
-  //position: relative;
+  // position: relative;
   width: 90vw;
   height: 90vh;
   margin-left: auto;
@@ -30,23 +30,23 @@ body.show-modal {
     padding: 50px 30px 40px;
   }
 }
-.close-btn {
-  position: absolute;
-  padding: 0;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  background-color: $color-white;
-  border: none;
-}
+// .close-btn {
+//   position: absolute;
+//   padding: 0;
+//   top: 10px;
+//   right: 10px;
+//   cursor: pointer;
+//   background-color: $color-white;
+//   border: none;
+// }
 
 .modal-wrapper {
   position: fixed;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: grey;
-  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.7);
+  // backdrop-filter: blur(20px);
 
   opacity: 0;
   user-select: none;
@@ -65,6 +65,7 @@ body.show-modal .modal-wrapper {
 }
 
 .modal-command {
+  padding: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: auto;
@@ -73,18 +74,32 @@ body.show-modal .modal-wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70vw;
+
+  max-width: 70vw;
   background: white;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-black;
 }
 
 .team-heading {
-  text-align: center;
-  font-size: 24px;
-  letter-spacing: 3px;
-  color: $color-bcg-btn;
-  filter: drop-shadow(0px 8px 43px $color-orange);
+  margin-bottom: 50px;
+  border-bottom: solid 3px $color-bcg-btn;
 
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  // letter-spacing: 3px;
+  color: $color-bcg-btn;
+  // filter: drop-shadow(0px 8px 43px $color-orange);
+
+  // margin-bottom: 20px;
 }
 
 .team-members {
@@ -102,11 +117,11 @@ body.show-modal .modal-wrapper {
 
   display: flex;
   flex-direction: column;
-  filter: drop-shadow(-2px 6px 5px $color-text-modal);
+  // filter: drop-shadow(-2px 6px 5px $color-text-modal);
 
   &:hover,
   &:focus {
-    filter: drop-shadow(-3px 7px 8px $color-text-modal);
+    // filter: drop-shadow(-3px 7px 8px $color-text-modal);
     transition: $transition-common;
     color: $color-orange;
   }
@@ -116,12 +131,15 @@ body.show-modal .modal-wrapper {
   border-radius: 50%;
   margin-bottom: 15px;
   width: 150px;
+
+  box-shadow: 2px 2px 1px $color-text-modal, 3px 3px 1px $color-bcg-btn;
+  border-radius: 5px;
 }
 
 .member-link {
-  font-size: 20px;
-  letter-spacing: $modal-line-height;
-  color: $color-text-footer;
+  // font-size: 20px;
+  // letter-spacing: $modal-line-height;
+  // color: $color-text-footer;
   color: inherit;
   text-decoration: none;
 
@@ -141,8 +159,11 @@ body.show-modal .modal-wrapper {
 
 .team-btn-close {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  // top: 30px;
+  // right: 30px;
+  top: 40px;
+  right: 20%;
+  transform: translateX(40%);
 
   width: 40px;
   height: 40px;
@@ -155,4 +176,16 @@ body.show-modal .modal-wrapper {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media screen and (min-width: $tablet) {
+  .team-btn-close {
+    transform: translateX(80%);
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .team-btn-close {
+    transform: translateX(120%);
+  }
 }
