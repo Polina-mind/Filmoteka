@@ -39,3 +39,13 @@ container.pagination({
 // deleteSpinner();
 lightbox();
 //lightBoxTeam()
+
+refs.filmoteka.addEventListener('click', event => {
+  event.preventDefault();
+  refs.inputForm.reset();
+  container.pagination({
+    ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!
+    dataSource: apiService.popularUrl, //передача корня ссылки на сайт в данном случае ссылка популярных фильмов
+    ajax: apiService.ajaxDataForPopular, // настройки запросов аякса под каждый сайт-сервер (apiKey,page,query)
+  });
+});

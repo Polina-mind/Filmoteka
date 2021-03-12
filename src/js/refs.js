@@ -17,6 +17,7 @@ const refs = {
   navHome: document.querySelector('#home'),
   headerHomeOrMyLibrary: document.querySelector('.home'),
   header: document.getElementById('header'),
+  filmoteka: document.querySelector('#filmoteka'),
 };
 
 export default refs;
