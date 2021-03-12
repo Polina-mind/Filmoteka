@@ -1,6 +1,6 @@
 import refs from './refs.js';
 
-import { paginationParametersCommon } from './components/library';
+import { paginatingLib } from './components/library';
 
 import './pagination.min';
 
@@ -21,7 +21,7 @@ function buttonWatchedActive() {
 }
 
 // refs.navLibrary.addEventListener('click', openLibrary);
-function queuePaginate() {
+export function queuePaginate() {
   paginatingLib(
     container,
     JSON.parse(localStorage.getItem('filmsQueue')),
@@ -29,7 +29,7 @@ function queuePaginate() {
   );
 }
 
-function watchedPaginate() {
+export function watchedPaginate() {
   paginatingLib(
     container,
     JSON.parse(localStorage.getItem('filmsWatched')),
@@ -56,7 +56,7 @@ function cardsPerPage() {
   const currentWidthMode = window
     .getComputedStyle(document.documentElement)
     .getPropertyValue('--currentWidthMode');
-  console.log(currentWidthMode);
+  // console.log(currentWidthMode);
   return currentWidthMode;
 }
 
@@ -103,13 +103,3 @@ refs.header.addEventListener('click', event => {
   }
 });
 
-function paginatingLib(containerToUse, SourceToUse, cardsPerPage) {
-  if (!SourceToUse) return;
-  containerToUse.pagination({
-    ...paginationParametersCommon,
-    dataSource: SourceToUse,
-    pageSize: cardsPerPage,
-    showPrevious: SourceToUse.length / cardsPerPage > 2,
-    showNext: SourceToUse.length / cardsPerPage > 2,
-  });
-}
