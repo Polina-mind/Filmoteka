@@ -30,6 +30,9 @@
   &.lib {
     background: url('/img/bg-library-mob.jpg'),
       linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }
 
@@ -100,6 +103,9 @@
     &.lib {
       background: url('/img/bg-library-tab.jpg'),
         linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 
@@ -119,18 +125,19 @@
   }
   .home-link:before {
     top: -5px;
-    // left: 0;
   }
 }
 @media screen and (min-width: 1024px) {
-  .home,
-  .home-page {
+  .home {
     background: url('/img/bg-home-desk.jpg'),
       linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 
     &.lib {
       background: url('/img/bg-library-desk.jpg'),
         linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 }
@@ -218,11 +225,13 @@
   outline: none;
 }
 .js-buttons {
-  justify-content: center;
+  justify-content: space-between;
+  width: 290px;
+  margin: auto;
 }
 .library__button {
   width: 140px;
-  margin-right: 20px;
+  padding: 0;
 }
 .library__button--active {
   background: $color-orange;
@@ -258,8 +267,14 @@
   text-align: center;
   color: $color-error-text;
 }
-#header {
+
+.home {
   width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#header {
   height: 230px;
 }
 .is-hidden {
