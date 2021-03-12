@@ -6,7 +6,7 @@
   margin: 0px;
   padding: 10px;
   width: 273px;
-  height: 425px;
+  height: 430px;
   padding-bottom: 5px;
 
   &__link {
@@ -48,7 +48,7 @@
   &__info {
     @include CenteredFlex(inline-flex, nowrap, center, flex-start);
     width: 100%;
-
+    padding-bottom: 5px;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
