@@ -7,7 +7,7 @@ const closeBtn = document.querySelector('.js-team-close');
 // import * as basicLightbox from 'basiclightbox';
 
 galleryContainer.addEventListener('click', onOpenModal);
-console.log(5667677, galleryContainer);
+// console.log(5667677, galleryContainer);
 function onOpenModal(evt) {
   evt.preventDefault();
 
