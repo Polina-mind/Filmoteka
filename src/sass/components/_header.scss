@@ -6,6 +6,7 @@
 }
 .js-buttons {
   display: flex;
+
   &.is-hidden {
     display: none;
   }
@@ -207,7 +208,7 @@
 }
 
 .library__button {
-  width: 130px;
+  width: calc((100% - 20px) / 2);
   height: 44px;
   border: 1px solid $color-white;
   border-radius: 5px;
@@ -219,6 +220,9 @@
   background: transparent;
   text-transform: uppercase;
   cursor: pointer;
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 15px) / 2);
+  }
 }
 .library__button--active {
   border: none;
@@ -226,13 +230,16 @@
 }
 .js-buttons {
   justify-content: space-between;
-  width: 290px;
+  width: 100%;
   margin: auto;
+  @media screen and (min-width: $tablet) {
+    width: calc((136px * 2) + 15px);
+  }
 }
-.library__button {
-  width: 140px;
-  padding: 0;
-}
+// .library__button {
+//   width: 140px;
+//   padding: 0;
+// }
 .library__button--active {
   background: $color-orange;
 }
