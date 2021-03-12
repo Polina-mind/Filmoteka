@@ -11,6 +11,9 @@ import checkButtonQueueActive from './buttonQueueCheckActive';
 import { modalWatcher, scrollBody, noScrollBody } from './modal-text-watcher';
 import posterPlaceholder from '../img/image-placeholder-modal.jpg';
 
+import {queuePaginate} from './openLibrary';
+import {watchedPaginate} from './openLibrary';
+
 function setPosterModal(data) {
   return !data ? posterPlaceholder : `https://image.tmdb.org/t/p/w500/${data}`;
 }
@@ -54,6 +57,7 @@ function getFilmInfo(movie_id) {
       'click',
       function () {
         checkButtonQueueActive(film);
+        queuePaginate();
       },
       false,
     );
@@ -63,7 +67,7 @@ function getFilmInfo(movie_id) {
     const buttonAddToWatchedRef = document.querySelector(
       '.modal__watched-button',
     );
-    console.log(buttonAddToWatchedRef);
+    // console.log(buttonAddToWatchedRef);
 
     // Listener to click
 
@@ -71,6 +75,7 @@ function getFilmInfo(movie_id) {
       'click',
       function () {
         checkButtonWatchedActive(film);
+        watchedPaginate();
       },
       false,
     );
@@ -99,9 +104,12 @@ function getFilmInfo(movie_id) {
     }
     const crossRef = document.querySelector('.icon-cross');
     crossRef.addEventListener('click', btnClosedModal);
+
     function btnClosedModal() {
       modal.close();
+      
       crossRef.removeEventListener('click', btnClosedModal);
+
       //   снимаю слушатель с кнопки
       buttonAddToQueueRef.removeEventListener(
         'click',
@@ -117,6 +125,7 @@ function getFilmInfo(movie_id) {
         },
         true,
       );
+
     }
 
     modalWatcher(); 

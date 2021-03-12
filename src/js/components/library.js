@@ -6,6 +6,18 @@ import refs from '../refs.js';
 import libraryTemplate from '../../templates/library.hbs';
 import libraryCardTemplate from '../../templates/library__card.hbs';
 
+
+export function paginatingLib(containerToUse, SourceToUse, cardsPerPage) {
+  if (!SourceToUse) return;
+  containerToUse.pagination({
+    ...paginationParametersCommon,
+    dataSource: SourceToUse,
+    pageSize: cardsPerPage,
+    showPrevious: SourceToUse.length / cardsPerPage > 2,
+    showNext: SourceToUse.length / cardsPerPage > 2,
+  });
+};
+
 export const paginationParametersCommon = {
   locator: 'results',
   totalNumberLocator: 2,
