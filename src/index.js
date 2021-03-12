@@ -19,7 +19,7 @@ refs.inputForm.addEventListener('submit', event => {
     return;
   }
   apiService.query = form.elements.query.value;
-  console.log(apiService.searchUrl);
+  // console.log(apiService.searchUrl);
   refs.movieGrid.innerHTML = '';
   //form.reset(); //чистим форму
 

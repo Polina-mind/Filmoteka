@@ -1,7 +1,5 @@
 import refs from './refs.js';
-
 import { paginatingLib } from './components/library';
-
 import './pagination.min';
 
 //
